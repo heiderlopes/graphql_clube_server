@@ -1,0 +1,65 @@
+const { gql} = require("apollo-server")
+
+const clubeSchema = gql `
+    
+    scalar DateTime 
+
+    type Clube {
+        id: ID,
+        nome: String!
+        ativo: Boolean!
+        simboloImageURL: String,
+        mascoteImageURL: String,
+        origem: Origem!,
+        createdAt: DateTime
+    }
+
+    input ClubeInput {
+        nome: String!
+        ativo: Boolean!
+        simboloImageURL: String,
+        mascoteImageURL: String,
+        origem: ClubeOrigem!,
+        createdAt: DateTime
+    }
+    
+    type Origem {
+        id: ID!,
+        origem: ClubeOrigem!
+    }
+
+    enum ClubeOrigem {
+        NACIONAL,
+        INTERNACIONAL
+    }
+
+    type Query {
+        clubes: [Clube]
+        clube(id: ID!) : Clube!
+    }
+
+    type Mutation {
+        addClube(clube: ClubeInput) : Clube!
+        updateClube(id: ID!, clube: ClubeInput) : updateClubeResponse!
+        deleteClube(id: ID!): deleteClubeResponse!
+    }
+
+    interface customResponse {
+        #tipo abstrato
+        code: Int!
+        message: String!
+    }
+
+    type deleteClubeResponse implements customResponse {
+        code: Int!
+        message: String!
+    }
+
+    type updateClubeResponse implements customResponse {
+        code: Int!
+        message: String!
+        clube: Clube!
+    }
+`
+
+module.exports = clubeSchema

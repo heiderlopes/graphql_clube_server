@@ -1,0 +1,32 @@
+{
+  "clubes": [
+    {
+      "nome": "SE Palmeiras",
+      "ativo": true,
+      "simboloImageURL": "https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2020/06/22121713/escudo-palmeiras-atual.png",
+      "mascoteImageURL": "https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2019/08/periquito.jpg",
+      "origem": 1,
+      "createdAt": "2022-10-24T00:00:00.000Z",
+      "id": 1
+    },
+    {
+      "nome": "Sport Clube Corinthians Paulista",
+      "ativo": true,
+      "simboloImageURL": "https://cdn.meutimao.com.br/_upload/ckeditor/2022/01/17/mascote-do-corinthians-elson-souto_jb.jpg",
+      "mascoteImageURL": "https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-01.png",
+      "origem": 1,
+      "createdAt": "2022-10-24T00:00:00.000Z",
+      "id": 2
+    }
+  ],
+  "origens": [
+    {
+      "id": 1,
+      "descricao": "NACIONAL"
+    },
+    {
+      "id": 2,
+      "descricao": "INTERNACIONAL"
+    }
+  ]
+}
